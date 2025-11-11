@@ -1,0 +1,107 @@
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
+
+body {
+  font-family: 'Playfair Display', serif;
+  margin: 0; padding: 0;
+  background-color: #fefefe;
+  color: #111827;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  scroll-behavior: smooth;
+}
+
+h1,h2,h3 { font-family: 'Playfair Display', serif; }
+h2 { font-size: 2rem; margin-bottom: 1rem; }
+p { font-size: 1.1rem; line-height: 1.8; }
+
+.navbar { display:flex; justify-content:space-between; align-items:center; background:#1e3a8a; color:white; padding:1rem 2rem; position:sticky; top:0; z-index:10; }
+.navbar .links a { color:white; margin-left:1rem; text-decoration:none; transition: color 0.3s; }
+.navbar .links a:hover, .navbar .links .active { text-decoration:underline; color:#0dcaf0; }
+
+.content { max-width:1200px; margin:0 auto; padding:0 1rem; padding-bottom:6rem; }
+
+.footer { text-align:center; padding:1rem; background:#1e3a8a; color:white; position:relative; }
+
+/* --- Buttons --- */
+.book-now-btn, .book-now-btn-small {
+  display:inline-block; background:#0dcaf0; color:#1e3a8a;
+  padding:0.8rem 1.6rem; border-radius:6px; text-decoration:none; font-weight:bold;
+  transition: all 0.3s ease; border:none; cursor:pointer;
+}
+.book-now-btn:hover, .book-now-btn-small:hover {
+  background:#1e3a8a; color:#0dcaf0;
+  transform: scale(1.05);
+}
+
+/* --- Contact Form --- */
+.contact-form {
+  display:flex; flex-direction:column; max-width:500px; gap:0.8rem; margin:2rem auto;
+  background: #f5f5f5; padding:1.5rem; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+.contact-form input, .contact-form textarea {
+  padding:0.5rem; border:1px solid #ccc; border-radius:4px; font-size:1rem; width:100%;
+}
+.contact-form button {
+  padding:0.6rem; background:#1e3a8a; color:white; border:none; border-radius:4px; cursor:pointer; font-weight:bold;
+}
+.contact-form button:hover { background:#0dcaf0; color:black; }
+
+/* --- Popup --- */
+.popup {
+  background:#0dcaf0; color:#111827; padding:1rem 1.5rem; margin-top:1rem;
+  text-align:center; border-radius:6px; font-weight:bold;
+  box-shadow:0 4px 12px rgba(0,0,0,0.25);
+  animation:fadeInOut 3s ease forwards;
+}
+@keyframes fadeInOut { 0%{opacity:0;transform:translateY(-10px);} 10%{opacity:1;transform:translateY(0);} 90%{opacity:1;} 100%{opacity:0;transform:translateY(-10px);} }
+
+/* --- Hero Section --- */
+.hero-section {
+  width:100vw; min-height:75vh; background-size:cover; background-position:center;
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  text-align:center; color:white; text-shadow:0 2px 6px rgba(0,0,0,0.5); position:relative;
+  margin-left:calc(-50vw + 50%);
+  padding:0 1rem;
+}
+.hero-section::before {
+  content:""; position:absolute; top:0; left:0; width:100%; height:100%;
+  background:linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.2)); z-index:1;
+}
+.hero-title, .hero-subtitle, .book-now-btn { position:relative; z-index:2; }
+.hero-title { font-size:3rem; margin-bottom:1rem; }
+.hero-subtitle { font-size:1.25rem; margin-bottom:2rem; }
+
+/* --- Sections --- */
+.section {
+  margin-bottom:3rem; max-width:900px; margin-left:auto; margin-right:auto;
+  font-size:1.15rem; line-height:1.8; padding:1rem;
+}
+.section h2 {
+  border-bottom:2px solid #0dcaf0; display:inline-block; padding-bottom:0.3rem;
+  margin-bottom:1rem; color:#1e3a8a; text-align:center;
+}
+
+/* --- Services Grid --- */
+.services-grid {
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:2rem; margin-top:2rem;
+}
+.service-card {
+  background:#f9f9f9; padding:1.5rem; border-radius:10px; text-align:center;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:all 0.3s ease; cursor:pointer; position:relative;
+}
+.service-card:hover { transform:translateY(-5px) scale(1.03); box-shadow:0 6px 15px rgba(0,0,0,0.15); }
+.service-card.expanded { background:#e0f7ff; }
+.service-icon { font-size:2.5rem; margin-bottom:1rem; color:#0dcaf0; transition: transform 0.3s; }
+.service-card:hover .service-icon { transform:scale(1.2); }
+.service-card h3 { color:#1e3a8a; margin-bottom:0.5rem; }
+.service-card p { font-size:1rem; line-height:1.5; }
+.extra-info { margin-top:0.5rem; font-style:italic; color:#0a2a5b; }
+
+/* --- Responsive Hero Text --- */
+@media (max-width:768px) {
+  .hero-title { font-size:2rem; }
+  .hero-subtitle { font-size:1rem; }
+  .services-grid { grid-template-columns:1fr; }
+  .contact-form { width:90%; }
+}
