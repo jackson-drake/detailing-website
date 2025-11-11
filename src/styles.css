@@ -105,3 +105,81 @@ p { font-size: 1.1rem; line-height: 1.8; }
   .services-grid { grid-template-columns:1fr; }
   .contact-form { width:90%; }
 }
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  /* Hero Section */
+  .hero-title { font-size: 2rem; }
+  .hero-subtitle { font-size: 1rem; }
+  .book-now-btn { padding: 0.6rem 1.2rem; font-size: 0.95rem; }
+
+  /* Sections */
+  .section { padding: 0 1rem; }
+
+  /* Services Grid */
+  .services-grid {
+    grid-template-columns: 1fr; /* stack services vertically */
+    gap: 1.5rem;
+  }
+  .service-card {
+    padding: 1rem;
+  }
+  .service-icon { font-size: 2rem; }
+  .service-card h3 { font-size: 1.25rem; }
+  .service-card p { font-size: 0.95rem; }
+
+  /* Contact Form */
+  .contact-form { width: 100%; padding: 0 0.5rem; }
+  .contact-form input, .contact-form textarea { font-size: 0.95rem; padding: 0.4rem; }
+  .contact-form button { padding: 0.5rem; font-size: 0.95rem; }
+
+  /* Footer */
+  .footer { font-size: 0.9rem; }
+}
+
+/* --- Hamburger --- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background: white;
+}
+
+/* --- Mobile Navbar Animation --- */
+@media (max-width: 768px) {
+  .navbar .links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #1e3a8a;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    overflow: hidden;          /* hide content when collapsed */
+    max-height: 0;             /* collapsed */
+    transition: max-height 0.3s ease-in-out; /* smooth slide */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  .navbar .links.open {
+    max-height: 500px; /* large enough to fit all links */
+  }
+
+  .navbar .links a {
+    margin: 0.5rem 0;
+    text-align: center;
+    color: white;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+
+
